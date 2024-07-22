@@ -2,8 +2,8 @@ import { CreatePostQuery, deletePostQuery } from "@/query/query";
 import { HandleFileUpload } from "./upload";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { BACKEND_URL } from "@/constants";
 
-const BACKEND_URL = "http://localhost:8000";
 
 //delete post
 

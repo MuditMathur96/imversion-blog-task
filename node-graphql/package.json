@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest --coverage",
     "dev": "nodemon ./src/index.ts",
-    "build":"ts",
-    "start":"node ./dist/index.js"
+    "build": "npx tsc",
+    "start": "node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +22,6 @@
     "nodemon": "^3.1.4",
     "ts-jest": "^29.2.3",
     "ts-node": "^10.9.2",
-    "tsc": "^2.0.4",
     "typescript": "^5.5.3"
   },
   "dependencies": {

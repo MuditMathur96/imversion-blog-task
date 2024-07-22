@@ -4,7 +4,7 @@ services:
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     ports:
       - "3000:3000"
     depends_on:
@@ -13,6 +13,9 @@ services:
   backend:
     build:
       context: ./node-graphql
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     ports:
-      - "4000:4000"
+      - "8000:8000"
+    environment:
+      - DATABASE_URL='postgresql://post_1qge_user:ASt4DhcVEVkR40meRMd0Y1Lkj1RFFDrx@dpg-cqf0uso8fa8c73egpipg-a.oregon-postgres.render.com/post_1qge'
+      - PORT=8000

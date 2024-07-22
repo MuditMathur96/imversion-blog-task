@@ -21,9 +21,7 @@ function Post({id,title,excerpt,imageUrl,size="sm"}: Props) {
     p-4`}>
               {/* Post Image */}
               <Image 
-              onError={(e:any)=>{
-                  e.target.src="/images/default-fallback-image.jpg"
-              }}
+            
               alt={title}
               src={imageUrl}
               width={300}
