@@ -7,6 +7,8 @@ services:
       dockerfile: dockerfile
     ports:
       - "3000:3000"
+    environment:
+      - BACKEND_URL=http://backend:8000
     depends_on:
       - backend
 
@@ -17,5 +19,5 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL='postgresql://post_1qge_user:ASt4DhcVEVkR40meRMd0Y1Lkj1RFFDrx@dpg-cqf0uso8fa8c73egpipg-a.oregon-postgres.render.com/post_1qge'
+      - DATABASE_URL=postgresql://post_1qge_user:ASt4DhcVEVkR40meRMd0Y1Lkj1RFFDrx@dpg-cqf0uso8fa8c73egpipg-a.oregon-postgres.render.com/post_1qge
       - PORT=8000
