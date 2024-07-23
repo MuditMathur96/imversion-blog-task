@@ -6,6 +6,8 @@ import ImageInput from './image-input/image-input';
 import EditorJS,{ OutputData } from '@editorjs/editorjs';
 import dynamic from 'next/dynamic';
 import { CATEGORIES } from '@/constants';
+import { redirect,useRouter } from 'next/navigation';
+
 
 //Import the rich text editor dynamically to skip server sider rendering
 const Editor = dynamic(()=>import("@/components/editor/editor"),{
@@ -25,6 +27,7 @@ function CreatePostForm() {
   const [loading,setLoading] = useState<boolean>(false);
   const editorRef = useRef<EditorJS | null>(null);
   const [category,setCategory] = useState<string>("");
+  const router = useRouter();
 
   async function handleSubmit(e:React.FormEvent){
     setLoading(true);
@@ -45,7 +48,8 @@ function CreatePostForm() {
         const res = await fetch("/api/v1/post",{
           method:"POST",
           body:formData
-        })
+        });
+        router.push("/");
        
 
 
@@ -53,6 +57,7 @@ function CreatePostForm() {
       }catch(err){
 
       }
+
 
       setLoading(false);
 

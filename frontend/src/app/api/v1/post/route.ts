@@ -41,7 +41,7 @@ async function POST(req:NextRequest){
     const data=  await res.json();
     console.log(data);
    // revalidatePath("/");
-    redirect(`/post/${data.data.createBlogPost.id}`)
+   // redirect(`/post/${data.data.createBlogPost.id}`)
     return generateSuccessResponse(url);
 
 
